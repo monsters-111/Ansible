@@ -1,0 +1,14 @@
+---
+- hosts: all
+  gather_facts: True
+  serial: 10
+  vars:
+    filebeat_version: 5.6.9
+    log_type: user
+    game_name: qdwy
+    log_kafka_ip_list: ["10.39.6.180:9092"]
+    log_kafka_topic_name: qdwy-user-snapshot
+    log_paths: /data/log/bilog/user/*.log
+
+  roles:
+    - { role: filebeat , tags: "filebeat"}

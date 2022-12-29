@@ -1,0 +1,20 @@
+---
+- hosts: all
+  gather_facts: True
+  serial: 10
+  vars:
+    - game_name: "qf2207"
+    - kafka_server: "192.168.1.1:9092"
+    - topics_name: "qf2207-prod"
+    - dirname: "qf2207-prod"
+    - consumer_threads: 3
+    - group_id: "qf2207-prod"
+    - es_host: "192.168.1.22:9200"
+    - es_user: "elastic"
+    - es_passwd: "1TAPWujoNqw2"
+    - logstash_version: "6.8.6"
+    - JVM_Xms_size: 2
+    - JVM_Xmx_size: 2
+
+  roles:
+    - { role: bglog_logstash , tags: "bglog_logstash"}

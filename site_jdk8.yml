@@ -1,0 +1,6 @@
+---
+- hosts: all
+  gather_facts: True
+  serial: 10
+  roles:
+    - { role: jdk18 , tags: "jdk18"}

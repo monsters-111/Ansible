@@ -1,0 +1,5 @@
+---
+- hosts: all
+  gather_facts: True
+  roles:
+    - { role: php7 , tags: "php7"}

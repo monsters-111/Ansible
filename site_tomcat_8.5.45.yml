@@ -1,0 +1,17 @@
+---
+- hosts: all
+  gather_facts: True
+  vars:
+    tomcat_app:
+      gmserver:
+        tomcat_version: "8.5.45"
+        tomcat_http_port: 8080
+        tomcat_max_memory: "1024M"
+        tomcat_min_memory: "1024M"
+    
+
+
+
+  roles:
+    - { role: tomcat , tags: "tomcat"}
+    - { role: tomcat-manager , tags: "tomcat-manager"}
